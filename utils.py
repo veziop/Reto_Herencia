@@ -1,13 +1,13 @@
 class Serie:
-    titulo = ''
+    titulo = 'titulo serie'
     numero_temporadas = 3
     entregado = False
-    genero = ''
-    creador = ''
+    genero = 'genero serie'
+    creador = 'creador serie'
 
-    def __init__(self, titulo, genero, creador):
+    def __init__(self, titulo, numero_temporadas, genero, creador):
         self.set_titulo(titulo)
-        # self.set_numero_temporadas(numero_temporadas)
+        self.set_numero_temporadas(numero_temporadas)
         self.set_genero(genero)
         self.set_creador(creador)
 
@@ -39,20 +39,20 @@ class Serie:
 
     # Dunder str()
     def __str__(self):
-        return f"{self.titulo} de {self.creador}"
+        return f"\"{self.titulo}\" de {self.creador}"
 
 
 # noinspection NonAsciiCharacters
 class Videojuego:
-    titulo = ''
+    titulo = 'titulo videojuego'
     horas_estimadas = 10
     entregado = False
-    genero = ''
-    compañia = ''
+    genero = 'genero videojuego'
+    compañia = 'compañia videojuego'
 
-    def __init__(self, titulo, genero, compañia):
+    def __init__(self, titulo, horas, genero, compañia):
         self.set_titulo(titulo)
-        # self.set_horas_estimadas(horas)
+        self.set_horas_estimadas(horas)
         self.set_genero(genero)
         self.set_creador(compañia)
 
@@ -84,7 +84,7 @@ class Videojuego:
 
     # Dunder str()
     def __str__(self):
-        return f"{self.titulo} de {self.compañia}"
+        return f"\"{self.titulo}\" de {self.compañia}"
 
 
 class Entregable:
@@ -100,6 +100,6 @@ class Entregable:
 
     def compareTo(self, obj, a):
         if isinstance(obj, Serie):
-            return obj.get_numero_temporadas() > a
+            return obj.get_numero_temporadas() > a.get_numero_temporadas()
         elif isinstance(obj, Videojuego):
-            return obj.get_horas_estimadas() > a
+            return obj.get_horas_estimadas() > a.get_horas_estimadas()
