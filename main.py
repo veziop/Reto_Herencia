@@ -1,5 +1,8 @@
 # Reto Herencia
-from utils import Serie, Videojuego, Entregable
+
+from interfaz import Interfaz
+from serie import Serie
+from videojuego import Videojuego
 from random import randint
 
 
@@ -21,7 +24,7 @@ if __name__ == "__main__":
         Videojuego('Plush\'em all!', 18, 'Arcade', 'Loom Studios'),
     ]
 
-    interfaz = Entregable()
+    interfaz = Interfaz()
 
     for item in lista_series + lista_videojuegos:
         chance = randint(0,1)
@@ -34,7 +37,7 @@ if __name__ == "__main__":
             count += 1
             print(f"{item} está entregado.")
 
-    print(f"Hay {count} entregados.")
+    print(f"Hay {count} productos entregados.")
 
     for index, serie in enumerate(lista_series):
         if index == 0:
